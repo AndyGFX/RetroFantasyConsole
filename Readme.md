@@ -372,46 +372,46 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'resolution' - Resolution*
    - *arg: 'pixelStyle' - Pixel style, one of "PixelStyle.Square", "PixelStyle.Wide", "PixelStyle.Tall"*
    - *ret: True if mode was successfully set, false otherwise*
-###*bool DisplayModeSet(Vector2i resolution, PixelStyle pixelStyle = PixelStyle.Square)*
+**bool DisplayModeSet(Vector2i resolution, PixelStyle pixelStyle = PixelStyle.Square)*
 ---
 
      Get Sprite size of the current sprite sheet.
      
    - *ret: Sprite size*
-###*Vector2i SpriteSize()*
+**Vector2i SpriteSize()**
 ---
 
      Get Sprite size of the given sprite sheet.
      
    - *arg: 'index' - Spritesheet index*
    - *ret: Sprite size*
-###*Vector2i SpriteSize(int index)*
+**Vector2i SpriteSize(int index)**
 ---
 
      Get Sprite sheet size of the current sprite sheet.
      
    - *ret: Sprite sheet size*
-###*Vector2i SpriteSheetSize()*
+**Vector2i SpriteSheetSize()**
 ---
 
      Get size of the given sprite sheet.
      
    - *arg: 'index' - Spritesheet index*
    - *ret: Return sprite sheet size*
-###*Vector2i SpriteSheetSize(int index)*
+**Vector2i SpriteSheetSize(int index)**
 ---
 
      Clear the current target.
      
-   - *arg: 'color' - Color to clear with*
-###*RETRO:Clear(Color32 color)*
+   - *arg: 'color' - Color to clear with**
+**RETRO:Clear(Color32 color)*
 ---
 
      Clear a region of the current target. Useful for clearing sprite sheet areas to alpha 0.
      
    - *arg: 'color' - Color to clear with*
    - *arg: 'rect' - Region to clear*
-###*RETRO:Clear(Color32 color, Rect2i rect)*
+**RETRO:Clear(Color32 color, Rect2i rect)**
 ---
 
      Helper function for calculating sprite index given sprite sheet column and row.
@@ -420,7 +420,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'column' - Column*
    - *arg: 'row' - Row*
    - *ret: Sprite index*
-###*int SpriteIndex(int column, int row)*
+**int SpriteIndex(int column, int row)**
 ---
 
      Helper function for calculating sprite index given sprite sheet column and row.
@@ -430,7 +430,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'column' - Column*
    - *arg: 'row' - Row*
    - *ret: Sprite index*
-###*int SpriteIndex(int spriteSheetIndex, int column, int row)*
+**int SpriteIndex(int spriteSheetIndex, int column, int row)**
 ---
 
      Helper function for calculating sprite index given sprite sheet column and row
@@ -439,7 +439,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'spriteSheetIndex' - Spritesheet for which to get sprite index for*
    - *arg: 'cell' - Cell in sprite sheet where "Vector2i.x" is the column and "Vector2i.y" is the row.*
    - *ret: Sprite index*
-###*int SpriteIndex(int spriteSheetIndex, Vector2i cell)*
+**int SpriteIndex(int spriteSheetIndex, Vector2i cell)**
 ---
 
      Load a sprite sheet, sprite size will be set to default of 16 x 16.
@@ -447,8 +447,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      The sprite size is used by tilemaps to layout tiles, and when using
      "DrawSprite" APIs. It is also possible to use a sprite sheet with a variety of sprite sizes and use the "DrawCopy"
    - *     APIs to render them.arg: 'index' - Sprite sheet slot index to load into*
-   - *arg: 'filename' - Filename of the sprite sheet file, must be within a Resources folder*
-###*RETRO:SpriteSheetSetup(int index, string filename)*
+   - *arg: 'filename' - Filename of the sprite sheet file, mu*st be within a Resources folder*
+**RETRO:SpriteSheetSetup(int index, string filename)**
 ---
 
      Load a sprite sheet and define the size of the sprites in it.
@@ -459,14 +459,14 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'index' - Sprite sheet slot index to load into*
    - *arg: 'filename' - Filename of the sprite sheet file, must be within a Resources folder*
    - *arg: 'spriteSize' - The size of sprites in this sprite sheet*
-###*RETRO:SpriteSheetSetup(int index, string filename, Vector2i spriteSize)*
+**RETRO:SpriteSheetSetup(int index, string filename, Vector2i spriteSize)**
 ---
 
      Setup a blank sprite sheet, which can be used as an offscreen surface for rendering.
      
    - *arg: 'index' - Sprite sheet slot index to load into*
    - *arg: 'size' - Size of the sprite sheet*
-###*RETRO:SpriteSheetSetup(int index, Vector2i size)*
+**RETRO:SpriteSheetSetup(int index, Vector2i size)**
 ---
 
      Setup a blank sprite sheet, which can be used as an offscreen surface for rendering
@@ -477,40 +477,40 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'index' - Sprite sheet slot index to load into*
    - *arg: 'size' - Size of the sprite sheet*
    - *arg: 'spriteSize' - The size of sprites in this sprite sheet*
-###*RETRO:SpriteSheetSetup(int index, Vector2i size, Vector2i spriteSize)*
+**RETRO:SpriteSheetSetup(int index, Vector2i size, Vector2i spriteSize)**
 ---
 
      Delete the given sprite sheet, freeing up GPU resources
      
    - *arg: 'index' - Sprite sheet slot index to delete*
-###*RETRO:SpriteSheetDelete(int index)*
+**RETRO:SpriteSheetDelete(int index)**
 ---
 
      Switch to the given sprite sheet.
      
      All sprite rendering from this point on will use this sprite sheet until a different sprite sheet is chosen.
    - *arg: 'index' - Sprite sheet slot index to switch to.*
-###*RETRO:SpriteSheetSet(int index)*
+**RETRO:SpriteSheetSet(int index)**
 ---
 
      Gets the index of the current sprite sheet.
      
    - *ret: Index of the current sprite sheet*
-###*int SpriteSheetGet()*
+**int SpriteSheetGet()**
 ---
 
      Draw a sprite with a given sprite index from the sprite sheet.
      
    - *arg: 'spriteIndex' - Sprite index*
    - *arg: 'pos' - Position on display*
-###*RETRO:DrawSprite(int spriteIndex, Vector2i pos)*
+**RETRO:DrawSprite(int spriteIndex, Vector2i pos)**
 ---
 
      Draw a sprite with a given sprite index from the sprite sheet, and a destination rectangle.
      
    - *arg: 'spriteIndex' - Sprite index*
    - *arg: 'destRect' - Destination rectangle*
-###*RETRO:DrawSprite(int spriteIndex, Rect2i destRect)*
+**RETRO:DrawSprite(int spriteIndex, Rect2i destRect)**
 ---
 
      Draw a sprite with a given sprite index from the sprite sheet.
@@ -520,7 +520,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'flags' - Any combination of flags: "FLIP_H", "FLIP_V",*
      "ROT_90_CW", "ROT_180_CW", "ROT_270_CW",
      "ROT_90_CCW", "ROT_180_CCW", "ROT_270_CCW".
-###*RETRO:DrawSprite(int spriteIndex, Vector2i pos, int flags = 0)*
+**RETRO:DrawSprite(int spriteIndex, Vector2i pos, int flags = 0)**
 ---
 
      Draw a sprite with a given sprite index from the sprite sheet, and a destination rectangle.
@@ -530,7 +530,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'flags' - Any combination of flags: "FLIP_H", "FLIP_V",*
      "ROT_90_CW", "ROT_180_CW", "ROT_270_CW",
      "ROT_90_CCW", "ROT_180_CCW", "ROT_270_CCW".
-###*RETRO:DrawSprite(int spriteIndex, Rect2i destRect, int flags = 0)*
+**RETRO:DrawSprite(int spriteIndex, Rect2i destRect, int flags = 0)**
 ---
 
      Draw a sprite with a given sprite index from the sprite sheet, a position, a pivot point and a rotation in degrees.
@@ -539,7 +539,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'pos' - Position on display*
    - *arg: 'pivot' - Rotation pivot point, specified as an offset from the sprites top left corner*
    - *arg: 'rotation' - Rotation in degrees*
-###*RETRO:DrawSprite(int spriteIndex, Vector2i pos, Vector2i pivot, float rotation)*
+**RETRO:DrawSprite(int spriteIndex, Vector2i pos, Vector2i pivot, float rotation)**
 ---
 
      Draw a sprite with a given sprite index from the sprite sheet, a destination rectangle, a pivot point and a rotation in degrees.
@@ -548,7 +548,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'destRect' - Position on display*
    - *arg: 'pivot' - Rotation pivot point, specified as an offset from the destination rectangle's top left corner*
    - *arg: 'rotation' - Rotation in degrees*
-###*RETRO:DrawSprite(int spriteIndex, Rect2i destRect, Vector2i pivot, float rotation)*
+**RETRO:DrawSprite(int spriteIndex, Rect2i destRect, Vector2i pivot, float rotation)**
 ---
 
      Draw a sprite with a given sprite index from the sprite sheet, a position, a pivot point and a rotation in degrees.
@@ -560,7 +560,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'flags' - Any combination of flags: "FLIP_H", "FLIP_V",*
      "ROT_90_CW", "ROT_180_CW", "ROT_270_CW",
      "ROT_90_CCW", "ROT_180_CCW", "ROT_270_CCW".
-###*RETRO:DrawSprite(int spriteIndex, Vector2i pos, Vector2i pivot, float rotation, int flags = 0)*
+**RETRO:DrawSprite(int spriteIndex, Vector2i pos, Vector2i pivot, float rotation, int flags = 0)**
 ---
 
      Draw a sprite with a given sprite index from the sprite sheet, a destination rectangle, a pivot point and a rotation in degrees.
@@ -572,14 +572,14 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'flags' - Any combination of flags: "FLIP_H", "FLIP_V",*
      "ROT_90_CW", "ROT_180_CW", "ROT_270_CW",
      "ROT_90_CCW", "ROT_180_CCW", "ROT_270_CCW".
-###*RETRO:DrawSprite(int spriteIndex, Rect2i destRect, Vector2i pivot, float rotation, int flags = 0)*
+**RETRO:DrawSprite(int spriteIndex, Rect2i destRect, Vector2i pivot, float rotation, int flags = 0)**
 ---
 
      Copy a rectangular region from the sprite sheet to the given position.
      
    - *arg: 'srcRect' - Source rectangle on the sprite sheet*
    - *arg: 'pos' - Position*
-###*RETRO:DrawCopy(Rect2i srcRect, Vector2i pos)*
+**RETRO:DrawCopy(Rect2i srcRect, Vector2i pos)**
 ---
 
      Copy a rectangular region from the sprite sheet to the given position.
@@ -589,7 +589,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'flags' - Any combination of flags: "FLIP_H", "FLIP_V",*
      "ROT_90_CW", "ROT_180_CW", "ROT_270_CW",
      "ROT_90_CCW", "ROT_180_CCW", "ROT_270_CCW".
-###*RETRO:DrawCopy(Rect2i srcRect, Vector2i pos, int flags = 0)*
+**RETRO:DrawCopy(Rect2i srcRect, Vector2i pos, int flags = 0)**
 ---
 
      Copy a rectangular region from the sprite sheet to the given position, a pivot point and a rotation in degrees.
@@ -598,7 +598,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'pos' - Position*
    - *arg: 'pivot' - Rotation pivot point, specified as an offset from the rectangles top left corner*
    - *arg: 'rotation' - Rotation in degrees*
-###*RETRO:DrawCopy(Rect2i srcRect, Vector2i pos, Vector2i pivot, float rotation)*
+**RETRO:DrawCopy(Rect2i srcRect, Vector2i pos, Vector2i pivot, float rotation)**
 ---
 
      Copy a rectangular region from the sprite sheet to the given position, a pivot point and a rotation in degrees.
@@ -610,14 +610,14 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'flags' - Any combination of flags: "FLIP_H", "FLIP_V",*
      "ROT_90_CW", "ROT_180_CW", "ROT_270_CW",
      "ROT_90_CCW", "ROT_180_CCW", "ROT_270_CCW".
-###*RETRO:DrawCopy(Rect2i srcRect, Vector2i pos, Vector2i pivot, float rotation, int flags = 0)*
+**RETRO:DrawCopy(Rect2i srcRect, Vector2i pos, Vector2i pivot, float rotation, int flags = 0)**
 ---
 
      Copy a rectangular region from the sprite sheet to a destination rectangle.
      
    - *arg: 'srcRect' - Source rectangle on the sprite sheet*
    - *arg: 'destRect' - Destination rectangle*
-###*RETRO:DrawCopy(Rect2i srcRect, Rect2i destRect)*
+**RETRO:DrawCopy(Rect2i srcRect, Rect2i destRect)**
 ---
 
      Copy a rectangular region from the sprite sheet to a destination rectangle.
@@ -627,7 +627,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'flags' - Any combination of flags: "FLIP_H", "FLIP_V",*
      "ROT_90_CW", "ROT_180_CW", "ROT_270_CW",
      "ROT_90_CCW", "ROT_180_CCW", "ROT_270_CCW".
-###*RETRO:DrawCopy(Rect2i srcRect, Rect2i destRect, int flags = 0)*
+**RETRO:DrawCopy(Rect2i srcRect, Rect2i destRect, int flags = 0)**
 ---
 
      Copy a rectangular region from the sprite sheet to a destination rectangle, with the given pivot point and rotation in degrees.
@@ -636,7 +636,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'destRect' - Destination rectangle*
    - *arg: 'pivot' - Rotation pivot point, specified as an offset from the destination rectangle's top left corner*
    - *arg: 'rotation' - Rotation in degrees*
-###*RETRO:DrawCopy(Rect2i srcRect, Rect2i destRect, Vector2i pivot, float rotation)*
+**RETRO:DrawCopy(Rect2i srcRect, Rect2i destRect, Vector2i pivot, float rotation)**
 ---
 
      Copy a rectangular region from the sprite sheet to a destination rectangle, with the given pivot point and rotation in degrees.
@@ -648,7 +648,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'flags' - Any combination of flags: "FLIP_H", "FLIP_V",*
      "ROT_90_CW", "ROT_180_CW", "ROT_270_CW",
      "ROT_90_CCW", "ROT_180_CCW", "ROT_270_CCW".
-###*RETRO:DrawCopy(Rect2i srcRect, Rect2i destRect, Vector2i pivot, float rotation, int flags = 0)*
+**RETRO:DrawCopy(Rect2i srcRect, Rect2i destRect, Vector2i pivot, float rotation, int flags = 0)**
 ---
 
      Draw a nine-slice sprite. Only need to pass one corner, one side, and middle, the rest is mirrored.
@@ -657,36 +657,21 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'srcTopLeftCornerRect' - Source rectangle of the top left corner*
    - *arg: 'srcTopSideRect' - Source rectangle of the top side*
    - *arg: 'srcMiddleRect' - Source rectangle of the middle*
-###*RETRO:DrawNineSlice(Rect2i destRect, Rect2i srcTopLeftCornerRect, Rect2i srcTopSideRect, Rect2i srcMiddleRect)*
----
-
-     Draw a nine-slice sprite.
-     
-   - *arg: 'destRect' - Destination rectangle*
-   - *arg: 'srcTopLeftCornerRect' - Source rectangle of the top left corner*
-   - *arg: 'srcTopSideRect' - Source rectangle of the top side*
-   - *arg: 'srcTopRightCornerRect' - Source rectangle of the top right corner*
-   - *arg: 'srcLeftSideRect' - Source rectangle of the left side*
-   - *arg: 'srcMiddleRect' - Source rectangle of the middle*
-   - *arg: 'srcRightSideRect' - Source rectangle of the right side*
-   - *arg: 'srcBottomLeftCornerRect' - Source rectangle of the bottom left corner*
-   - *arg: 'srcBottomSideRect' - Source rectangle of the bottom side*
-   - *arg: 'srcBottomRightCornerRect' - Source rectangle of the bottom right corner*
-###*RETRO:DrawNineSlice(*
+**RETRO:DrawNineSlice(Rect2i destRect, Rect2i srcTopLeftCornerRect, Rect2i srcTopSideRect, Rect2i srcMiddleRect)**
 ---
 
      Draw a nine-slice sprite.
      
    - *arg: 'destRect' - Destination rectangle*
    - *arg: 'nineSlice' - NineSlice defining the parts of the nine-slice image*
-###*RETRO:DrawNineSlice(Rect2i destRect, NineSlice nineSlice)*
+**RETRO:DrawNineSlice(Rect2i destRect, NineSlice nineSlice)**
 ---
 
      Draw a pixel.
      
    - *arg: 'pos' - Position*
    - *arg: 'color' - Color*
-###*RETRO:DrawPixel(Vector2i pos, Color32 color)*
+**RETRO:DrawPixel(Vector2i pos, Color32 color)**
 ---
 
      Draw a triangle outline
@@ -695,7 +680,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'p1' - Second point of the triangle*
    - *arg: 'p2' - Third point of the triangle*
    - *arg: 'color' - Color*
-###*RETRO:DrawTriangle(Vector2i p0, Vector2i p1, Vector2i p2, Color32 color)*
+**RETRO:DrawTriangle(Vector2i p0, Vector2i p1, Vector2i p2, Color32 color)**
 ---
 
      Draw a triangle outline with a pivot point and rotation in degrees
@@ -706,7 +691,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'color' - Color*
    - *arg: 'pivot' - Rotation pivot point, specified as an offset from the rectangle's top left corner*
    - *arg: 'rotation' - Rotation in degrees*
-###*RETRO:DrawTriangle(Vector2i p0, Vector2i p1, Vector2i p2, Color32 color, Vector2i pivot, float rotation)*
+**RETRO:DrawTriangle(Vector2i p0, Vector2i p1, Vector2i p2, Color32 color, Vector2i pivot, float rotation)**
 ---
 
      Draw a filled triangle
@@ -715,7 +700,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'p1' - Second point of the triangle*
    - *arg: 'p2' - Third point of the triangle*
    - *arg: 'color' - Color*
-###*RETRO:DrawTriangleFill(Vector2i p0, Vector2i p1, Vector2i p2, Color32 color)*
+**RETRO:DrawTriangleFill(Vector2i p0, Vector2i p1, Vector2i p2, Color32 color)**
 ---
 
      Draw a filled triangle with a pivot point and rotation in degrees
@@ -726,14 +711,14 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'color' - Color*
    - *arg: 'pivot' - Rotation pivot point, specified as an offset from the rectangle's top left corner*
    - *arg: 'rotation' - Rotation in degrees*
-###*RETRO:DrawTriangleFill(Vector2i p0, Vector2i p1, Vector2i p2, Color32 color, Vector2i pivot, float rotation)*
+**RETRO:DrawTriangleFill(Vector2i p0, Vector2i p1, Vector2i p2, Color32 color, Vector2i pivot, float rotation)**
 ---
 
      Draw a rectangle outline
      
    - *arg: 'rect' - Rectangular area*
    - *arg: 'color' - Color*
-###*RETRO:DrawRect(Rect2i rect, Color32 color)*
+**RETRO:DrawRect(Rect2i rect, Color32 color)*
 ---
 
      Draw a rectangle outline with a pivot point and rotation in degrees
@@ -742,14 +727,14 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'color' - Color*
    - *arg: 'pivot' - Rotation pivot point, specified as an offset from the rectangle's top left corner*
    - *arg: 'rotation' - Rotation in degrees*
-###*RETRO:DrawRect(Rect2i rect, Color32 color, Vector2i pivot, float rotation)*
+**RETRO:DrawRect(Rect2i rect, Color32 color, Vector2i pivot, float rotation)**
 ---
 
      Draw a filled rectangle
      
    - *arg: 'rect' - Rectangular area*
    - *arg: 'color' - Color*
-###*RETRO:DrawRectFill(Rect2i rect, Color32 color)*
+**RETRO:DrawRectFill(Rect2i rect, Color32 color)**
 ---
 
      Draw a filled rectangle with a pivot point and rotation in degrees
@@ -758,7 +743,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'color' - Color*
    - *arg: 'pivot' - Rotation pivot point, specified as an offset from the rectangle's top left corner*
    - *arg: 'rotation' - Rotation in degrees*
-###*RETRO:DrawRectFill(Rect2i rect, Color32 color, Vector2i pivot, float rotation)*
+**RETRO:DrawRectFill(Rect2i rect, Color32 color, Vector2i pivot, float rotation)**
 ---
 
      Draw a line between two points.
@@ -766,7 +751,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'p0' - One end of the line*
    - *arg: 'p1' - The other end of the line*
    - *arg: 'color' - Color*
-###*RETRO:DrawLine(Vector2i p0, Vector2i p1, Color32 color)*
+**RETRO:DrawLine(Vector2i p0, Vector2i p1, Color32 color)**
 ---
 
      Draw a line between two points, with a pivot point and rotation in degrees.
@@ -776,7 +761,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'color' - Color*
    - *arg: 'pivot' - Pivot point*
    - *arg: 'rotation' - Rotation in degrees*
-###*RETRO:DrawLine(Vector2i p0, Vector2i p1, Color32 color, Vector2i pivot, float rotation)*
+**RETRO:DrawLine(Vector2i p0, Vector2i p1, Color32 color, Vector2i pivot, float rotation)**
 ---
 
      Draw an ellipse outline.
@@ -784,7 +769,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'center' - Center position*
    - *arg: 'radius' - Radius*
    - *arg: 'color' - Color*
-###*RETRO:DrawEllipse(Vector2i center, Vector2i radius, Color32 color)*
+**RETRO:DrawEllipse(Vector2i center, Vector2i radius, Color32 color)**
 ---
 
      Draw a filled ellipse.
@@ -792,7 +777,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'center' - Center position*
    - *arg: 'radius' - Radius*
    - *arg: 'color' - Color*
-###*RETRO:DrawEllipseFill(Vector2i center, Vector2i radius, Color32 color)*
+**RETRO:DrawEllipseFill(Vector2i center, Vector2i radius, Color32 color)**
 ---
 
      Draw an inversely filled ellipse. The fill covers the area outside of the ellipse, while leaving
@@ -801,79 +786,79 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'center' - Center position*
    - *arg: 'radius' - Radius*
    - *arg: 'color' - Color*
-###*RETRO:DrawEllipseInvertedFill(Vector2i center, Vector2i radius, Color32 color)*
+**RETRO:DrawEllipseInvertedFill(Vector2i center, Vector2i radius, Color32 color)**
 ---
 
      Draw the given map layer to the display.
      
    - *arg: 'layer' - Layer number to draw*
-###*RETRO:DrawMapLayer(int layer)*
+**RETRO:DrawMapLayer(int layer)**
 ---
 
      Draw the given map layer to the display with an offset.
      
    - *arg: 'layer' - Layer number to draw*
    - *arg: 'pos' - Offset*
-###*RETRO:DrawMapLayer(int layer, Vector2i pos)*
+**RETRO:DrawMapLayer(int layer, Vector2i pos)**
 ---
 
      Set the alpha transparency value for drawing.
      
    - *arg: 'a' - A value between 0 (invisible) to 255 (solid)*
-###*RETRO:AlphaSet(byte a)*
+**RETRO:AlphaSet(byte a)**
 ---
 
      Get the current alpha transparency value
      
    - *ret: Transparency*
-###*byte AlphaGet()*
+**byte RETRO:AlphaGet()**
 ---
 
      Set the tint color for drawing.
      
    - *arg: 'tintColor' - Tint color*
-###*RETRO:TintColorSet(Color32 tintColor)*
+**RETRO:TintColorSet(Color32 tintColor)**
 ---
 
      Get the current tint color.
      
    - *ret: Tint color*
-###*Color32 TintColorGet()*
+**Color32 RETRO:TintColorGet()**
 ---
 
      Set the current camera position for drawing
      
    - *arg: 'pos' - Position*
-###*RETRO:CameraSet(Vector2i pos)*
+**RETRO:CameraSet(Vector2i pos)*
 ---
 
      Reset the camera position back to 0, 0. This is equivalent to "CameraSet"(0, 0).
      
-###*RETRO:CameraReset()*
+**RETRO:CameraReset()**
 ---
 
      Get the current camera position
      
    - *ret: Camera position*
-###*Vector2i CameraGet()*
+**Vector2i CameraGet()**
 ---
 
      Set a rectangular clipping region. All drawing outside of this region will be clipped away. By default the clipping
      region covers the entire display.
      
    - *arg: 'rect' - Rectangular clip region*
-###*RETRO:ClipSet(Rect2i rect)*
+**RETRO:ClipSet(Rect2i rect)**
 ---
 
      Reset the clipping region back to covering the entire render surface, be it the display, or current offscreen target.
      
-###*RETRO:ClipReset()*
+**RETRO:ClipReset()**
 ---
 
      Get the current clipping region.
      
    - *ret: Clipping region*
-###*Rect2i ClipGet()*
+**Rect2i ClipGet()**
 ---
 
      Enable clip region debugging by drawing rectangles around the clip regions with the given color index. Subsequent
@@ -881,35 +866,35 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      start of each frame.
      
    - *arg: 'color' - RGBA color*
-###*RETRO:ClipDebugEnable(Color32 color)*
+**RETRO:ClipDebugEnable(Color32 color)**
 ---
 
      Disable clip region debugging, will not draw clip region outlines for subsequent calls to <ref>RetroBlit.ClipSet</ref>.
      
-###*RETRO:ClipDebugDisable()*
+**RETRO:ClipDebugDisable()**
 ---
 
      Enable a batch debugging overlay which shows how many draw batches are being used
      
    - *arg: 'fontColor' - Font color to use*
    - *arg: 'backgroundColor' - Background color to use*
-###*RETRO:BatchDebugEnable(Color32 fontColor, Color32 backgroundColor)*
+**RETRO:BatchDebugEnable(Color32 fontColor, Color32 backgroundColor)**
 ---
 
      Disable batch debugging overlay
      
-###*RETRO:BatchDebugDisable()*
+**RETRO:BatchDebugDisable()**
 ---
 
      Switch to drawing to the a sprite sheet surface. All subsequent drawing calls will target this sprite sheet
      
    - *arg: 'spriteSheetIndex' - SpriteSheet to switch to*
-###*RETRO:Offscreen(int spriteSheetIndex)*
+**RETRO:Offscreen(int spriteSheetIndex)**
 ---
 
      Switch to drawing to the display.
      
-###*RETRO:Onscreen()*
+**RETRO:Onscreen()**
 ---
 
      Set the tilemap sprite index at the given tile position, with optional flags.
@@ -918,7 +903,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'tilePos' - Tile position*
    - *arg: 'sprite' - Sprite index*
    - *arg: 'flags' - Sprite flags*
-###*RETRO:MapSpriteSet(int layer, Vector2i tilePos, int sprite, int flags = 0)*
+**RETRO:MapSpriteSet(int layer, Vector2i tilePos, int sprite, int flags = 0)**
 ---
 
      Set the tilemap sprite index at the given tile position, with color tint and optional flags.
@@ -928,7 +913,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'sprite' - Sprite index*
    - *arg: 'tintColor' - Tint color*
    - *arg: 'flags' - Sprite flags*
-###*RETRO:MapSpriteSet(int layer, Vector2i tilePos, int sprite, Color32 tintColor, int flags = 0)*
+**RETRO:MapSpriteSet(int layer, Vector2i tilePos, int sprite, Color32 tintColor, int flags = 0)**
 ---
 
      Get the sprite index at the given tile position
@@ -936,7 +921,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'layer' - Map layer*
    - *arg: 'tilePos' - Tile position*
    - *ret: Sprite index*
-###*int = RETRO:MapSpriteGet(int layer, Vector2i tilePos)*
+**int = RETRO:MapSpriteGet(int layer, Vector2i tilePos)**
 ---
 
      Set user data for the tilemap at the given tile position
@@ -944,7 +929,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'layer' - Tilemap layer*
    - *arg: 'tilePos' - Tile position*
    - *arg: 'data' - Data*
-###*RETRO:MapDataSet(int layer, Vector2i tilePos, metatable)*
+**RETRO:MapDataSet(int layer, Vector2i tilePos, metatable)**
 ---
 
      Get user data for the tilemap at the given tile position
@@ -953,18 +938,18 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'layer' - Tilemap layer*
    - *arg: 'tilePos' - Tile position*
    - *ret: Data*
-###*metatable = RETRO:MapDataGet(int layer, Vector2i tilePos)*
+**metatable = RETRO:MapDataGet(int layer, Vector2i tilePos)**
 ---
 
      Clear the entire tilemap, on all layers.
      
-###*RETRO:MapClear()*
+**RETRO:MapClear()*
 ---
 
      Clear only the given tilemap layer.
      
    - *arg: 'layer' - Layer to clear*
-###*RETRO:MapClear(int layer)*
+**RETRO:MapClear(int layer)**
 ---
      Set the sprite sheet to be used by the given tilemap layer.
      
@@ -972,7 +957,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      that match it's sprite sheet's sprite size.
    - *arg: 'mapLayer' - Map layer number*
    - *arg: 'spriteSheetIndex' - Sprite sheet slot index to use*
-###*RETRO:MapLayerSpriteSheetSet(int mapLayer, int spriteSheetIndex)*
+**RETRO:MapLayerSpriteSheetSet(int mapLayer, int spriteSheetIndex)**
 ---
 
      Check if a map chunk at the given position is empty/unloaded. A chunk can become empty if its been shifted out
@@ -982,7 +967,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'layer' - Chunk layer*
    - *arg: 'pos' - Offset of the chunk in tile coordinates*
    - *ret: True if empty, false otherwise*
-###*bool MapChunkEmpty(int layer, Vector2i pos)*
+**bool MapChunkEmpty(int layer, Vector2i pos)**
 ---
 
      Shift the tilemap chunks by the given amount chunks in the X and Y direction. This method is particularly useful
@@ -993,7 +978,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      map chunks.
    - *arg: 'layer' - Map layer*
    - *arg: 'shiftChunks' - Shift amount in chunk numbers in the x and y direction.*
-###*RETRO:MapShiftChunks(int layer, Vector2i shiftChunks)*
+**RETRO:MapShiftChunks(int layer, Vector2i shiftChunks)**
 ---
 
      Print text to display using custom font at the given position.
@@ -1017,7 +1002,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'pos' - Position*
    - *arg: 'color' - Color*
    - *arg: 'text' - Text*
-###*RETRO:Print(Vector2i pos, Color32 color, string text)*
+**RETRO:Print(Vector2i pos, Color32 color, string text)**
 ---
 
      Print text to display using custom font at the given position.
@@ -1042,7 +1027,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'color' - Color*
    - *arg: 'flags' - Optional flag "NO_INLINE_COLOR"*
    - *arg: 'text' - Text*
-###*RETRO:Print(Vector2i pos, Color32 color, int flags, string text)*
+**RETRO:Print(Vector2i pos, Color32 color, int flags, string text)**
 ---
 
      Print text to display using custom font at the given position.
@@ -1069,7 +1054,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      "ALIGN_H_CENTER", "ALIGN_V_TOP", "ALIGN_V_BOTTOM",
      "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
    - *arg: 'text' - Text*
-###*RETRO:Print(Rect2i rect, Color32 color, int alignFlags, string text)*
+**RETRO:Print(Rect2i rect, Color32 color, int alignFlags, string text)**
 ---
 
       Print text to display using custom font at the given position.
@@ -1093,7 +1078,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'pos' - Position*
    - *arg: 'color' - Color*
    - *arg: 'text' - Text*
-###*RETRO:Print(Vector2i pos, Color32 color, FastString text)*
+**RETRO:Print(Vector2i pos, Color32 color, FastString text)**
 ---
 
      Print text to display using custom font at the given position.
@@ -1118,7 +1103,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'color' - Color*
    - *arg: 'flags' - Optional flag "NO_INLINE_COLOR"*
    - *arg: 'text' - Text*
-###*RETRO:Print(Vector2i pos, Color32 color, int flags, FastString text)*
+**RETRO:Print(Vector2i pos, Color32 color, int flags, FastString text)**
 ---
 
      Print text to display using custom font at the given position.
@@ -1145,32 +1130,14 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      "ALIGN_H_CENTER", "ALIGN_V_TOP", "ALIGN_V_BOTTOM",
      "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
    - *arg: 'text' - Text*
-###*RETRO:Print(Rect2i rect, Color32 color, int alignFlags, FastString text)*
+**RETRO:Print(Rect2i rect, Color32 color, int alignFlags, FastString text)**
 ---
 
      Measure a text string without printing it, using system font.
      
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-###*Vector2i PrintMeasure(string text)*
----
-
-     Measure a text string without printing it, using system font.
-     
-   - *arg: 'rect' - Rectangular area to print to*
-   - *arg: 'alignFlags' - Any combination of flags: "ALIGN_H_LEFT", "ALIGN_H_RIGHT",*
-     "ALIGN_H_CENTER", "ALIGN_V_TOP", "ALIGN_V_BOTTOM",
-     "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
-   - *arg: 'text' - Text*
-   - *ret: Dimensions*
-###*Vector2i PrintMeasure(Rect2i rect, int alignFlags, string text)*
----
-
-     Measure a text string without printing it, using system font.
-     
-   - *arg: 'text' - Text*
-   - *ret: Dimensions*
-###*Vector2i PrintMeasure(FastString text)*
+**Vector2i PrintMeasure(string text)**
 ---
 
      Measure a text string without printing it, using system font.
@@ -1181,7 +1148,25 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-###*Vector2i PrintMeasure(Rect2i rect, int alignFlags, FastString text)*
+**Vector2i PrintMeasure(Rect2i rect, int alignFlags, string text)**
+---
+
+     Measure a text string without printing it, using system font.
+     
+   - *arg: 'text' - Text*
+   - *ret: Dimensions*
+**Vector2i PrintMeasure(FastString text)**
+---
+
+     Measure a text string without printing it, using system font.
+     
+   - *arg: 'rect' - Rectangular area to print to*
+   - *arg: 'alignFlags' - Any combination of flags: "ALIGN_H_LEFT", "ALIGN_H_RIGHT",*
+     "ALIGN_H_CENTER", "ALIGN_V_TOP", "ALIGN_V_BOTTOM",
+     "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
+   - *arg: 'text' - Text*
+   - *ret: Dimensions*
+**Vector2i PrintMeasure(Rect2i rect, int alignFlags, FastString text)**
 ---
 
      Print text to display using custom font at the given position.
@@ -1206,106 +1191,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'pos' - Position*
    - *arg: 'color' - Color*
    - *arg: 'text' - Text*
-###*RETRO:Print(int fontIndex, Vector2i pos, Color32 color, string text)*
----
-
-     Print text to display using custom font at the given position.
-     In the arg: 'text' string the "@" character is an escape character, and it enables the following options:
-      
-     "@@" - Print @
-     
-     "@######" - Color change in the format RRGGBB, where each color channel has a hex value between 00 and FF
-     
-     "@-" - Revert back to the color specified in the arg: '"color" parameter.
-     
-     "@w###" - Apply a wavy text effect in the format APS (wave amplitude, period, and speed), where each
-     parameter has a value between 0 and 9. Default is "@w000"
-     
-     "@s#" - Apply a shaky text effect in the format M (magnitude), where M has a value between 0 and 9.
-     Default is "@s0"
-     
-     "@g##" - Change the font to the given 2 digit font index. Default is "@g99" which is a special value
-     indicating built-in system font.
-     
-   - *arg: 'fontIndex' - Font index*
-   - *arg: 'pos' - Position*
-   - *arg: 'color' - Color*
-   - *arg: 'flags' - Optional flag "NO_INLINE_COLOR"*
-   - *arg: 'text' - Text*
-###*RETRO:Print(int fontIndex, Vector2i pos, Color32 color, int flags, string text)*
----
-
-     Print text to display using custom font at the given position.
-     In the arg: 'text' string the "@" character is an escape character, and it enables the following options:
-      
-     "@@" - Print @
-     
-     "@######" - Color change in the format RRGGBB, where each color channel has a hex value between 00 and FF
-     
-     "@-" - Revert back to the color specified in the arg: '"color" parameter.
-     
-     "@w###" - Apply a wavy text effect in the format APS (wave amplitude, period, and speed), where each
-     parameter has a value between 0 and 9. Default is "@w000"
-     
-     "@s#" - Apply a shaky text effect in the format M (magnitude), where M has a value between 0 and 9.
-     Default is "@s0"
-     
-     "@g##" - Change the font to the given 2 digit font index. Default is "@g99" which is a special value
-     indicating built-in system font.
-     
-   - *arg: 'fontIndex' - Font index*
-   - *arg: 'rect' - Rectangular area to print to*
-   - *arg: 'color' - Color*
-   - *arg: 'alignFlags' - Any combination of flags: "ALIGN_H_LEFT", "ALIGN_H_RIGHT",*
-     "ALIGN_H_CENTER", "ALIGN_V_TOP", "ALIGN_V_BOTTOM",
-     "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
-   - *arg: 'text' - Text*
-###*RETRO:Print(int fontIndex, Rect2i rect, Color32 color, int alignFlags, string text)*
----
-
-     Measure a text string without printing it, using custom font.
-     
-   - *arg: 'fontIndex' - Font index*
-   - *arg: 'text' - Text*
-   - *ret: Dimensions*
-###*Vector2i PrintMeasure(int fontIndex, string text)*
----
-
-     Measure a text string without printing it, using custom font.
-     
-   - *arg: 'fontIndex' - Font index*
-   - *arg: 'rect' - Rectangular area to print to*
-   - *arg: 'alignFlags' - Any combination of flags: "ALIGN_H_LEFT", "ALIGN_H_RIGHT",*
-     "ALIGN_H_CENTER", "ALIGN_V_TOP", "ALIGN_V_BOTTOM",
-     "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
-   - *arg: 'text' - Text*
-   - *ret: Dimensions*
-###*Vector2i PrintMeasure(int fontIndex, Rect2i rect, int alignFlags, string text)*
----
-
-     Print text to display using custom font at the given position.
-     In the arg: 'text' string the "@" character is an escape character, and it enables the following options:
-      
-     "@@" - Print @
-     
-     "@######" - Color change in the format RRGGBB, where each color channel has a hex value between 00 and FF
-     
-     "@-" - Revert back to the color specified in the arg: '"color" parameter.
-     
-     "@w###" - Apply a wavy text effect in the format APS (wave amplitude, period, and speed), where each
-     parameter has a value between 0 and 9. Default is "@w000"
-     
-     "@s#" - Apply a shaky text effect in the format M (magnitude), where M has a value between 0 and 9.
-     Default is "@s0"
-     
-     "@g##" - Change the font to the given 2 digit font index. Default is "@g99" which is a special value
-     indicating built-in system font.
-     
-   - *arg: 'fontIndex' - Font index*
-   - *arg: 'pos' - Position*
-   - *arg: 'color' - Color*
-   - *arg: 'text' - Text*
-###*RETRO:Print(int fontIndex, Vector2i pos, Color32 color, FastString text)*
+**RETRO:Print(int fontIndex, Vector2i pos, Color32 color, string text)**
 ---
 
      Print text to display using custom font at the given position.
@@ -1331,7 +1217,106 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'color' - Color*
    - *arg: 'flags' - Optional flag "NO_INLINE_COLOR"*
    - *arg: 'text' - Text*
-###*RETRO:Print(int fontIndex, Vector2i pos, Color32 color, int flags, FastString text)*
+**RETRO:Print(int fontIndex, Vector2i pos, Color32 color, int flags, string text)**
+---
+
+     Print text to display using custom font at the given position.
+     In the arg: 'text' string the "@" character is an escape character, and it enables the following options:
+      
+     "@@" - Print @
+     
+     "@######" - Color change in the format RRGGBB, where each color channel has a hex value between 00 and FF
+     
+     "@-" - Revert back to the color specified in the arg: '"color" parameter.
+     
+     "@w###" - Apply a wavy text effect in the format APS (wave amplitude, period, and speed), where each
+     parameter has a value between 0 and 9. Default is "@w000"
+     
+     "@s#" - Apply a shaky text effect in the format M (magnitude), where M has a value between 0 and 9.
+     Default is "@s0"
+     
+     "@g##" - Change the font to the given 2 digit font index. Default is "@g99" which is a special value
+     indicating built-in system font.
+     
+   - *arg: 'fontIndex' - Font index*
+   - *arg: 'rect' - Rectangular area to print to*
+   - *arg: 'color' - Color*
+   - *arg: 'alignFlags' - Any combination of flags: "ALIGN_H_LEFT", "ALIGN_H_RIGHT",*
+     "ALIGN_H_CENTER", "ALIGN_V_TOP", "ALIGN_V_BOTTOM",
+     "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
+   - *arg: 'text' - Text*
+**RETRO:Print(int fontIndex, Rect2i rect, Color32 color, int alignFlags, string text)**
+---
+
+     Measure a text string without printing it, using custom font.
+     
+   - *arg: 'fontIndex' - Font index*
+   - *arg: 'text' - Text*
+   - *ret: Dimensions*
+**Vector2i PrintMeasure(int fontIndex, string text)**
+---
+
+     Measure a text string without printing it, using custom font.
+     
+   - *arg: 'fontIndex' - Font index*
+   - *arg: 'rect' - Rectangular area to print to*
+   - *arg: 'alignFlags' - Any combination of flags: "ALIGN_H_LEFT", "ALIGN_H_RIGHT",*
+     "ALIGN_H_CENTER", "ALIGN_V_TOP", "ALIGN_V_BOTTOM",
+     "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
+   - *arg: 'text' - Text*
+   - *ret: Dimensions*
+**Vector2i PrintMeasure(int fontIndex, Rect2i rect, int alignFlags, string text)**
+---
+
+     Print text to display using custom font at the given position.
+     In the arg: 'text' string the "@" character is an escape character, and it enables the following options:
+      
+     "@@" - Print @
+     
+     "@######" - Color change in the format RRGGBB, where each color channel has a hex value between 00 and FF
+     
+     "@-" - Revert back to the color specified in the arg: '"color" parameter.
+     
+     "@w###" - Apply a wavy text effect in the format APS (wave amplitude, period, and speed), where each
+     parameter has a value between 0 and 9. Default is "@w000"
+     
+     "@s#" - Apply a shaky text effect in the format M (magnitude), where M has a value between 0 and 9.
+     Default is "@s0"
+     
+     "@g##" - Change the font to the given 2 digit font index. Default is "@g99" which is a special value
+     indicating built-in system font.
+     
+   - *arg: 'fontIndex' - Font index*
+   - *arg: 'pos' - Position*
+   - *arg: 'color' - Color*
+   - *arg: 'text' - Text*
+**RETRO:Print(int fontIndex, Vector2i pos, Color32 color, FastString text)**
+---
+
+     Print text to display using custom font at the given position.
+     In the arg: 'text' string the "@" character is an escape character, and it enables the following options:
+      
+     "@@" - Print @
+     
+     "@######" - Color change in the format RRGGBB, where each color channel has a hex value between 00 and FF
+     
+     "@-" - Revert back to the color specified in the arg: '"color" parameter.
+     
+     "@w###" - Apply a wavy text effect in the format APS (wave amplitude, period, and speed), where each
+     parameter has a value between 0 and 9. Default is "@w000"
+     
+     "@s#" - Apply a shaky text effect in the format M (magnitude), where M has a value between 0 and 9.
+     Default is "@s0"
+     
+     "@g##" - Change the font to the given 2 digit font index. Default is "@g99" which is a special value
+     indicating built-in system font.
+     
+   - *arg: 'fontIndex' - Font index*
+   - *arg: 'pos' - Position*
+   - *arg: 'color' - Color*
+   - *arg: 'flags' - Optional flag "NO_INLINE_COLOR"*
+   - *arg: 'text' - Text*
+**RETRO:Print(int fontIndex, Vector2i pos, Color32 color, int flags, FastString text)**
 ---
 
      Print text to display using custom font at the given position.
@@ -1358,7 +1343,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      "ALIGN_H_CENTER", "ALIGN_V_TOP", "ALIGN_V_BOTTOM",
      "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
    - *arg: 'text' - Text*
-###*RETRO:Print(int fontIndex, Rect2i rect, Color32 color, int alignFlags, FastString text)*
+**RETRO:Print(int fontIndex, Rect2i rect, Color32 color, int alignFlags, FastString text)**
 ---
 
      Measure a text string without printing it, using custom font.
@@ -1366,7 +1351,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'fontIndex' - Font index*
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-###*Vector2i PrintMeasure(int fontIndex, FastString text)*
+**Vector2i PrintMeasure(int fontIndex, FastString text)*
 ---
 
      Measure a text string without printing it, using custom font.
@@ -1378,7 +1363,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-###*Vector2i PrintMeasure(int fontIndex, Rect2i rect, int alignFlags, FastString text)*
+**Vector2i PrintMeasure(int fontIndex, Rect2i rect, int alignFlags, FastString text)**
 ---
 
      Setup a custom font from the sprite sheet.
@@ -1395,7 +1380,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'characterSpacing' - Spacing between characters*
    - *arg: 'lineSpacing' - Line spacing between lines of text*
    - *arg: 'monospaced' - True if font is monospaced*
-###*RETRO:FontSetup(int fontIndex, int asciiStart, int asciiEnd, Vector2i srcPos, int spriteSheetIndex, Vector2i glyphSize, int glyphsPerRow, int characterSpacing, int lineSpacing, bool monospaced)*
+**RETRO:FontSetup(int fontIndex, int asciiStart, int asciiEnd, Vector2i srcPos, int spriteSheetIndex, Vector2i glyphSize, int glyphsPerRow, int characterSpacing, int lineSpacing, bool monospaced)**
 ---
 
      Return true if any of the given button(s) are held down.
@@ -1403,7 +1388,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'button' - A bitmask of one or multiple buttons.*
    - *arg: 'player' - Player to check, or "PLAYER_ANY" to check any player. Defaults to "PLAYER_ONE"*
    - *ret: True if button(s) held down*
-###*bool ButtonDown(int button, int player = PLAYER_ONE)*
+**bool ButtonDown(int button, int player = PLAYER_ONE)**
 ---
 
      Return true if any of the given button(s) went from an up to down state since last "IRetroBlitGame.Update" call.
@@ -1411,7 +1396,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'button' - A bitmask of one or multiple buttons.*
    - *arg: 'player' - Player to check, or "PLAYER_ANY" to check any player. Defaults to "PLAYER_ONE"*
    - *ret: True if button(s) pressed*
-###*bool ButtonPressed(int button, int player = PLAYER_ONE)*
+**bool ButtonPressed(int button, int player = PLAYER_ONE)**
 ---
 
      Return true if any of the given button(s) went from a down to up state since last "IRetroBlitGame.Update" call.
@@ -1419,28 +1404,28 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'button' - A bitmask of one or multiple buttons.*
    - *arg: 'player' - Player to check, or "PLAYER_ANY" to check any player. Defaults to "PLAYER_ONE"*
    - *ret: True if button(s) released*
-###*bool ButtonReleased(int button, int player = PLAYER_ONE)*
+**bool ButtonReleased(int button, int player = PLAYER_ONE)**
 ---
 
      Return true if given key is held down.
      
    - *arg: 'keyCode' - Key code*
    - *ret: True if key held down*
-###*bool KeyDown(KeyCode keyCode)*
+**bool KeyDown(KeyCode keyCode)**
 ---
 
      Return true if given key went from an up to down state since last "IRetroBlitGame.Update" call.
      
    - *arg: 'keyCode' - Key code*
    - *ret: True if key pressed*
-###*bool KeyPressed(KeyCode keyCode)*
+**bool KeyPressed(KeyCode keyCode)**
 ---
 
      Return true if given key went from a down to up state since last "IRetroBlitGame.Update" call.
      
    - *arg: 'keyCode' - Key code*
    - *ret: True if key released*
-###*bool KeyReleased(KeyCode keyCode)*
+**bool KeyReleased(KeyCode keyCode)**
 ---
 
      Returns of string of characters entered since last "IRetroBlitGame.Update" call. Normally this string
@@ -1448,7 +1433,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      spawn of a single game loop.
      
    - *ret: Character string*
-###*string InputString()*
+**string InputString()**
 ---
 
      Get the current pointer position. If there is a mouse detected then the position is the position of the mouse pointer in
@@ -1457,21 +1442,21 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      if the pointer position is valid.
      
    - *ret: Pointer position*
-###*Vector2i PointerPos()*
+**Vector2i PointerPos()**
 ---
 
      Returns true if the pointer position is valid. A pointer position may be undefined if there is no mouse connected, and there are no
      current touches.
      
    - *ret: True if pointer position is valid*
-###*bool PointerPosValid()*
+**bool PointerPosValid()**
 ---
 
      Get the delta of the mouse scroll position since last "IRetroBlitGame.Update" call. The delta is always 0 if there
      is no mouse connected.
      
    - *ret: Delta position*
-###*float = RETRO:PointerScrollDelta()*
+**float = RETRO:PointerScrollDelta()**
 ---
 
      Provide a delegate for overriding RetroBlit button mapping. The delegate implementation takes a button and returns true if the button
@@ -1480,7 +1465,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      RetroBlit using its default mapping for this button.
      
    - *arg: 'overrideMethod' - Input override delegate*
-###*RETRO:InputOverride(InputOverrideMethod overrideMethod)*
+**RETRO:InputOverride(InputOverrideMethod overrideMethod)**
 ---
 
      Setup sound clip at the given sound slot index.
@@ -1488,13 +1473,13 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'sfx_name' - Sound name*
    - *arg: 'fileName' - Filename of the sound file, must be within a Resources folder*
    - *ret: 'slotIndex' - slot id in SFX list*
-###*int slotIndex = RETRO:SoundSetup(string sfx_name, string fileName)*
+**int slotIndex = RETRO:SoundSetup(string sfx_name, string fileName)**
 ---
 
      Remove sound clip from the given slot index, freeing up resources.
      
    - *arg: 'slotIndex' - Sound slot index*
-###*RETRO:SoundDelete(int slotIndex)*
+**RETRO:SoundDelete(int slotIndex)**
 ---
 
      Play the sound at the given sound slot index. This function returns the "SoundReference" of the playing
@@ -1504,8 +1489,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'volume' - Volume to play at where 0 is silent, 1 is the original clip volume and values beyond 1 indicate amplification beyond the recorded volume. Defaults to 1*
    - *arg: 'pitch' - Pitch to play at, where 1 is the original sound pitch, values less than 1 indicate lower pitch, and values greater than 1 indicate higher pitch. Defaults to 1*
    - *ret: Sound reference*
-###*SoundReference SoundPlay(int slotIndex, float volume = 1.0f, float pitch = 1.0f)*
-###*SoundReference SoundPlay(string sfx_name, float volume = 1.0f, float pitch = 1.0f)*
+**SoundReference SoundPlay(int slotIndex, float volume = 1.0f, float pitch = 1.0f)**
+**SoundReference SoundPlay(string sfx_name, float volume = 1.0f, float pitch = 1.0f)**
 ---
 
      Check if a sound is playing by using its "SoundReference".
@@ -1513,97 +1498,97 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      
    - *arg: 'soundReference' - Sound reference*
    - *ret: True if still playing, false otherwise.*
-###*bool SoundIsPlaying(SoundReference soundReference)*
+**bool SoundIsPlaying(SoundReference soundReference)**
 ---
 
      Set the volume of the currently playing sound by using its "SoundReference"
      
    - *arg: 'soundReference' - Sound reference*
    - *arg: 'volume' - New volume to play at where 0 is silent, 1 is the original clip volume and values beyond 1 indicate amplification beyond the recorded volume*
-###*RETRO:SoundVolumeSet(SoundReference soundReference, float volume)*
+**RETRO:SoundVolumeSet(SoundReference soundReference, float volume)**
 ---
 
      Set the pitch of the currently playing sound by using its "SoundReference"
      
    - *arg: 'soundReference' - Sound reference*
    - *arg: 'pitch' - New pitch to play at, where 1 is the original sound pitch, values less than 1 indicate lower pitch, and values greater than 1 indicate higher pitch*
-###*RETRO:SoundPitchSet(SoundReference soundReference, float pitch)*
+**RETRO:SoundPitchSet(SoundReference soundReference, float pitch)**
 ---
 
      Get the volume of the currently playing sound by using its "SoundReference"
      
    - *arg: 'soundReference' - Sound reference*
    - *ret: Volume*
-###*float = RETRO:SoundVolumeGet(SoundReference soundReference)*
+**float = RETRO:SoundVolumeGet(SoundReference soundReference)**
 ---
 
      Get the pitch of the currently playing sound by using its "SoundReference"
      
    - *arg: 'soundReference' - Sound reference*
    - *ret: Pitch*
-###*float = RETRO:SoundPitchGet(SoundReference soundReference)*
+**float = RETRO:SoundPitchGet(SoundReference soundReference)**
 ---
 
      Stop the sound currently playing by using its "SoundReference". Once the sound is stopped it can no longer be resumed and the specified "SoundReference" is
      no longer valid.
      
    - *arg: 'soundReference' - Sound reference*
-###*RETRO:SoundStop(SoundReference soundReference)*
+**RETRO:SoundStop(SoundReference soundReference)**
 ---
 
      Specify whether the currently playing sound specified by "SoundReference" should keep looping.
      
    - *arg: 'soundReference' - Sound reference*
    - *arg: 'loop' - True if sound should loop*
-###*RETRO:SoundLoopSet(SoundReference soundReference, bool loop)*
+**RETRO:SoundLoopSet(SoundReference soundReference, bool loop)**
 ---
 
      Setup music at the given music slot index.
      
    - *arg: 'slotIndex' - Music slot index*
    - *arg: 'fileName' - Filename of the music file, must be within a Resources folder*
-###*RETRO:MusicSetup(int slotIndex, string fileName)*
+**RETRO:MusicSetup(int slotIndex, string fileName)**
 ---
 
      Remove music clip from the given slot index, freeing up resources.
      
    - *arg: 'slotIndex' - Music slot index*
-###*RETRO:MusicDelete(int slotIndex)*
+**RETRO:MusicDelete(int slotIndex)**
 ---
 
      Play music stored at the given slot index. If there already is music playing then it is cross-faded to the newly specified music.
      
    - *arg: 'slotIndex' - Music slot index*
-###*RETRO:MusicPlay(int slotIndex)*
+**RETRO:MusicPlay(int slotIndex)**
 ---
 
      Stop currently playing music.
      
-###*RETRO:MusicStop()*
+**RETRO:MusicStop()**
 ---
 
      Set the volume of music.
      
    - *arg: 'volume' - New volume to play at where 0 is silent, 1 is the original music volume and values beyond 1 indicate amplification beyond the recorded volume*
-###*RETRO:MusicVolumeSet(float volume = 1.0f)*
+**RETRO:MusicVolumeSet(float volume = 1.0f)**
 ---
 
      Set the pitch of music.
      
    - *arg: 'pitch' - New pitch to play at, where 1 is the original music pitch, values less than 1 indicate lower pitch, and values greater than 1 indicate higher pitch*
-###*RETRO:MusicPitchSet(float pitch = 1.0f)*
+**RETRO:MusicPitchSet(float pitch = 1.0f)**
 ---
 
      Get the current music volume.
      
    - *ret: Volume*
-###*float = RETRO:MusicVolumeGet()*
+**float = RETRO:MusicVolumeGet()**
 ---
 
      Get the current music pitch.
      
    - *ret: Pitch*
-###*float = RETRO:MusicPitchGet()*
+**float = RETRO:MusicPitchGet()**
 ---
 
      Set values for the given post processing effect. Setting arg: '"intensity" to 0 turns off the effect entirely.
@@ -1612,47 +1597,47 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'intensity' - Intensity*
    - *arg: 'parameters' - Additional parameters*
    - *arg: 'color' - Color*
-###*RETRO:EffectSet(Effect type, float intensity, Vector2i parameters, Color32 color)*
+**RETRO:EffectSet(Effect type, float intensity, Vector2i parameters, Color32 color)**
 ---
 
      Set intensity for the given post processing effect. Setting arg: '"intensity" to 0 turns off the effect entirely.
      
    - *arg: 'type' - Effect type*
    - *arg: 'intensity' - Intensity*
-###*RETRO:EffectSet(Effect type, float intensity)*
+**RETRO:EffectSet(Effect type, float intensity)**
 ---
 
      Set parameters for the given post processing effect. The effect is not yet active if its intensity is 0.
      
    - *arg: 'type' - Effect type*
    - *arg: 'parameters' - Additional parameters*
-###*RETRO:EffectSet(Effect type, Vector2i parameters)*
+**RETRO:EffectSet(Effect type, Vector2i parameters)**
 ---
 
      Set color for the given post processing effect. The effect is not yet active if its intensity is 0.
      
    - *arg: 'type' - Effect type*
    - *arg: 'color' - Color*
-###*RETRO:EffectSet(Effect type, Color32 color)*
+**RETRO:EffectSet(Effect type, Color32 color)**
 ---
 
      Set a custom post-processing effect shader. Note that some RetroBlit built-in shaders may not work if
      a custom shader is specified. For loading shaders see "ShaderSetup"
      
    - *arg: 'shaderIndex' - Shader index*
-###*RETRO:EffectShader(int shaderIndex)*
+**RETRO:EffectShader(int shaderIndex)**
 ---
 
      Specify texture filtering to use with custom post-processing effect shader, see "EffectShader".
      Default filter is "Filter.Nearest".
      
    - *arg: 'filter' - "Filter.Nearest" or "Filter.Linear"*
-###*RETRO:EffectFilter(Filter filter)*
+**RETRO:EffectFilter(Filter filter)**
 ---
 
      Reset all post-processing effect back to default/off state.
      
-###*RETRO:EffectReset()*
+**RETRO:EffectReset()**
 ---
 
      Apply post-processing effects at this point. This is useful if you don't want to apply effects to all layers, for
@@ -1660,38 +1645,38 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      will likely want to change your effects, or call "EffectReset". "EffectApplyNow" is called
      automatically at the end of "IRetroBlitGame.Render".
      
-###*RETRO:EffectApplyNow()*
+**RETRO:EffectApplyNow()**
 ---
 
      Load a shader into the given shader slot, from the given filename.
      
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'filename' - Shader filename, must be within a Resources folder*
-###*RETRO:ShaderSetup(int shaderIndex, string filename)*
+**RETRO:ShaderSetup(int shaderIndex, string filename)**
 ---
 
      Set the current shader
      
    - *arg: 'shaderIndex' - Shader index*
-###*RETRO:ShaderSet(int shaderIndex)*
+**RETRO:ShaderSet(int shaderIndex)**
 ---
 
      Apply shader now, this causes an implicit flush of the rendering pipeline. You may want to call "ShaderApplyNow" if
      you want the current shader parameters to apply to earlier Draw calls before you make further changes to the shader parameters.
      
-###*RETRO:ShaderApplyNow()*
+**RETRO:ShaderApplyNow()**
 ---
 
      Reset the shader back to the default RetroBlit shader.
      
-###*RETRO:ShaderReset()*
+**RETRO:ShaderReset()**
 ---
 
      Get a unique ID of a shader property as specified in a shader file. It is more efficient to pass around a shader ID then its string name.
      
    - *arg: 'name' - Name of the property*
    - *ret: Unique ID*
-###*int ShaderPropertyID(string name)*
+**int ShaderPropertyID(string name)**
 ---
 
      Set a shader color property
@@ -1699,7 +1684,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'color' - Color*
-###*RETRO:ShaderColorSet(int shaderIndex, string name, Color32 color)*
+**RETRO:ShaderColorSet(int shaderIndex, string name, Color32 color)**
 ---
 
      Set a shader color property
@@ -1707,7 +1692,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'color' - Color*
-###*RETRO:ShaderColorSet(int shaderIndex, int propertyID, Color32 color)*
+**RETRO:ShaderColorSet(int shaderIndex, int propertyID, Color32 color)**
 ---
 
      Set a shader color array
@@ -1715,7 +1700,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'colorArray' - Color list*
-###*RETRO:ShaderColorArraySet(int shaderIndex, string name, List(Color32) colorArray)*
+**RETRO:ShaderColorArraySet(int shaderIndex, string name, List(Color32) colorArray)**
 ---
 
      Set a shader color array
@@ -1723,7 +1708,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'colorArray' - Color list*
-###*RETRO:ShaderColorArraySet(int shaderIndex, int propertyID, List(Color32) colorArray)*
+**RETRO:ShaderColorArraySet(int shaderIndex, int propertyID, List(Color32) colorArray)**
 ---
 
      Set a shader color array
@@ -1731,7 +1716,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'colorArray' - Color array*
-###*RETRO:ShaderColorArraySet(int shaderIndex, string name, Color32[] colorArray)*
+**RETRO:ShaderColorArraySet(int shaderIndex, string name, Color32[] colorArray)**
 ---
 
      Set a shader color array
@@ -1739,7 +1724,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'colorArray' - Color array*
-###*RETRO:ShaderColorArraySet(int shaderIndex, int propertyID, Color32[] colorArray)*
+**RETRO:ShaderColorArraySet(int shaderIndex, int propertyID, Color32[] colorArray)**
 ---
 
      Set a shader float property
@@ -1747,7 +1732,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'value' - Float value*
-###*RETRO:ShaderFloatSet(int shaderIndex, string name, float value)*
+**RETRO:ShaderFloatSet(int shaderIndex, string name, float value)**
 ---
 
      Set a shader float property
@@ -1755,7 +1740,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'value' - Float value*
-###*RETRO:ShaderFloatSet(int shaderIndex, int propertyID, float value)*
+**RETRO:ShaderFloatSet(int shaderIndex, int propertyID, float value)**
 ---
 
      Set a shader float array
@@ -1763,7 +1748,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'values' - Float array*
-###*RETRO:ShaderFloatArraySet(int shaderIndex, string name, float[] values)*
+**RETRO:ShaderFloatArraySet(int shaderIndex, string name, float[] values)**
 ---
 
      Set a shader float array
@@ -1771,7 +1756,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'values' - Float array*
-###*RETRO:ShaderFloatArraySet(int shaderIndex, int propertyID, float[] values)*
+**RETRO:ShaderFloatArraySet(int shaderIndex, int propertyID, float[] values)**
 ---
 
      Set a shader float array
@@ -1779,7 +1764,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'values' - Float list*
-###*RETRO:ShaderFloatArraySet(int shaderIndex, string name, List(float) values)*
+**RETRO:ShaderFloatArraySet(int shaderIndex, string name, List(float) values)**
 ---
 
      Set a shader float array
@@ -1787,7 +1772,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property name*
    - *arg: 'values' - Float list*
-###*RETRO:ShaderFloatArraySet(int shaderIndex, int propertyID, List(float) values)*
+**RETRO:ShaderFloatArraySet(int shaderIndex, int propertyID, List(float) values)**
 ---
 
      Set a shader integer property
@@ -1795,7 +1780,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'value' - Integer value*
-###*RETRO:ShaderIntSet(int shaderIndex, string name, int value)*
+**RETRO:ShaderIntSet(int shaderIndex, string name, int value)**
 ---
 
      Set a shader integer property
@@ -1803,7 +1788,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'value' - Integer value*
-###*RETRO:ShaderIntSet(int shaderIndex, int propertyID, int value)*
+**RETRO:ShaderIntSet(int shaderIndex, int propertyID, int value)**
 ---
 
      Set a shader matrix
@@ -1811,7 +1796,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'matrix' - Matrix*
-###*RETRO:ShaderMatrixSet(int shaderIndex, string name, Matrix4x4 matrix)*
+**RETRO:ShaderMatrixSet(int shaderIndex, string name, Matrix4x4 matrix)**
 ---
 
      Set a shader matrix
@@ -1819,7 +1804,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'matrix' - Matrix*
-###*RETRO:ShaderMatrixSet(int shaderIndex, int propertyID, Matrix4x4 matrix)*
+**RETRO:ShaderMatrixSet(int shaderIndex, int propertyID, Matrix4x4 matrix)**
 ---
 
      Set a shader matrix array
@@ -1827,7 +1812,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'matrices' - Matrix array*
-###*RETRO:ShaderMatrixArraySet(int shaderIndex, string name, Matrix4x4[] matrices)*
+**RETRO:ShaderMatrixArraySet(int shaderIndex, string name, Matrix4x4[] matrices)**
 ---
 
      Set a shader matrix array
@@ -1835,7 +1820,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'matrices' - Matrix array*
-###*RETRO:ShaderMatrixArraySet(int shaderIndex, int propertyID, Matrix4x4[] matrices)*
+**RETRO:ShaderMatrixArraySet(int shaderIndex, int propertyID, Matrix4x4[] matrices)**
 ---
 
      Set a shader matrix array
@@ -1843,7 +1828,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'matrices' - Matrix list*
-###*RETRO:ShaderMatrixArraySet(int shaderIndex, string name, List(Matrix4x4) matrices)*
+**RETRO:ShaderMatrixArraySet(int shaderIndex, string name, List(Matrix4x4) matrices)**
 ---
 
      Set a shader matrix array
@@ -1851,7 +1836,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'matrices' - Matrix list*
-###*RETRO:ShaderMatrixArraySet(int shaderIndex, int propertyID, List(Matrix4x4) matrices)*
+**RETRO:ShaderMatrixArraySet(int shaderIndex, int propertyID, List(Matrix4x4) matrices)**
 ---
 
      Set a shader vector property
@@ -1859,7 +1844,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'vector' - Vector*
-###*RETRO:ShaderVectorSet(int shaderIndex, string name, Vector4 vector)*
+**RETRO:ShaderVectorSet(int shaderIndex, string name, Vector4 vector)**
 ---
 
      Set a shader vector property
@@ -1867,7 +1852,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'vector' - Vector*
-###*RETRO:ShaderVectorSet(int shaderIndex, int propertyID, Vector4 vector)*
+**RETRO:ShaderVectorSet(int shaderIndex, int propertyID, Vector4 vector)**
 ---
 
      Set a shader vector array
@@ -1875,7 +1860,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'vectors' - Vector array*
-###*RETRO:ShaderVectorArraySet(int shaderIndex, string name, Vector4[] vectors)*
+**RETRO:ShaderVectorArraySet(int shaderIndex, string name, Vector4[] vectors)**
 ---
 
      Set a shader vector array
@@ -1883,7 +1868,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'vectors' - Vector array*
-###*RETRO:ShaderVectorArraySet(int shaderIndex, int propertyID, Vector4[] vectors)*
+**RETRO:ShaderVectorArraySet(int shaderIndex, int propertyID, Vector4[] vectors)**
 ---
 
      Set a shader vector array
@@ -1891,7 +1876,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'vectors' - Vector list*
-###*RETRO:ShaderVectorArraySet(int shaderIndex, string name, List(Vector4) vectors)*
+**RETRO:ShaderVectorArraySet(int shaderIndex, string name, List(Vector4) vectors)**
 ---
 
      Set a shader vector array
@@ -1899,7 +1884,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'vectors' - Vector list*
-###*RETRO:ShaderVectorArraySet(int shaderIndex, int propertyID, List(Vector4) vectors)*
+**RETRO:ShaderVectorArraySet(int shaderIndex, int propertyID, List(Vector4) vectors)**
 ---
 
      Set a shader spritesheet texture
@@ -1907,7 +1892,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'name' - Property name*
    - *arg: 'spriteSheetIndex' - Spritesheet index*
-###*RETRO:ShaderSpriteSheetTextureSet(int shaderIndex, string name, int spriteSheetIndex)*
+**RETRO:ShaderSpriteSheetTextureSet(int shaderIndex, string name, int spriteSheetIndex)**
 ---
 
      Set a shader offscreen texture
@@ -1915,7 +1900,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'propertyID' - Property ID*
    - *arg: 'spriteSheetIndex' - Spritesheet index*
-###*RETRO:ShaderSpriteSheetTextureSet(int shaderIndex, int propertyID, int spriteSheetIndex)*
+**RETRO:ShaderSpriteSheetTextureSet(int shaderIndex, int propertyID, int spriteSheetIndex)**
 ---
 
      Set an spritesheet texture filter to be used by the shader. The default filter is "Filter.Nearest".
@@ -1923,29 +1908,5 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'shaderIndex' - Shader index*
    - *arg: 'spriteSheetIndex' - Spritesheet index*
    - *arg: 'filter' - "Filter.Nearest" or "Filter.Linear"*
-###*RETRO:ShaderSpriteSheetFilterSet(int shaderIndex, int spriteSheetIndex, Filter filter)*
+**RETRO:ShaderSpriteSheetFilterSet(int shaderIndex, int spriteSheetIndex, Filter filter)**
 ---
-
-     A reference to currently playing sound. This structure is returned by "SoundPlay" and can be used with
-     "SoundStop", "SoundVolumeSet", "SoundVolumeGet", "SoundPitchSet"
-     and "SoundPitchGet" to manage the sound as it plays.
-     
-###* struct SoundReference*
----
-
-         Sound channel. Do not modify.
-         
-###*int SoundChannel;*
----
-
-         Sound sequence. Do not modify
-         
-###*long Sequence;*
----
-
-         Sound reference constructor. Used internally by RetroBlit.
-         
-   - *    arg: 'channel' - Sound channel*
-   - *    arg: 'seq' - Sound sequence*
-###*SoundReference(int channel, long seq)*
-
