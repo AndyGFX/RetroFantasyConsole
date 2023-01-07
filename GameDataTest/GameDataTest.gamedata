@@ -1,0 +1,64 @@
+[
+  {
+    "name": "VarInt",
+    "value": "11",
+    "table": null,
+    "type": 0
+  },
+  {
+    "name": "VarFloat",
+    "value": "2.22",
+    "table": null,
+    "type": 1
+  },
+  {
+    "name": "VarString",
+    "value": "MyString",
+    "table": null,
+    "type": 2
+  },
+  {
+    "name": "MyObject",
+    "value": null,
+    "table": {
+      "Keys": [
+        "Int",
+        "w"
+      ],
+      "Values": [
+        10.0,
+        {
+          "Keys": [
+            "x",
+            "y",
+            "label"
+          ],
+          "Values": [
+            0.0,
+            0.0,
+            "console"
+          ]
+        }
+      ]
+    },
+    "type": 8
+  },
+  {
+    "name": "VarV2i",
+    "value": "(2, 3)",
+    "table": null,
+    "type": 3
+  },
+  {
+    "name": "VarR2i",
+    "value": "(2, 3, 4, 5)",
+    "table": null,
+    "type": 4
+  },
+  {
+    "name": "VarR2f",
+    "value": "(2, 3, 4, 5)",
+    "table": null,
+    "type": 4
+  }
+]
