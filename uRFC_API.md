@@ -377,13 +377,14 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'resolution' - Resolution*
    - *arg: 'pixelStyle' - Pixel style, one of "PixelStyle.Square", "PixelStyle.Wide", "PixelStyle.Tall"*
    - *ret: True if mode was successfully set, false otherwise*
+
 **bool DisplayModeSet(Vector2i resolution, PixelStyle pixelStyle = PixelStyle.Square)*
 ---
 
      Get Sprite size of the current sprite sheet.
      
    - *ret: Sprite size*
-   
+
 **Vector2i SpriteSize()**
 ---
 
@@ -898,6 +899,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      Get the current camera position
      
    - *ret: Camera position*
+
 **Vector2i CameraGet()**
 ---
 
@@ -1216,7 +1218,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-**Vector2i PrintMeasure(string text)**
+
+**Vector2i RETRO:PrintMeasure(string text)**
 ---
 
      Measure a text string without printing it, using system font.
@@ -1227,14 +1230,16 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-**Vector2i PrintMeasure(Rect2i rect, int alignFlags, string text)**
+
+**Vector2i RETRO:PrintMeasure(Rect2i rect, int alignFlags, string text)**
 ---
 
      Measure a text string without printing it, using system font.
      
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-**Vector2i PrintMeasure(FastString text)**
+
+**Vector2i RETRO:PrintMeasure(FastString text)**
 ---
 
      Measure a text string without printing it, using system font.
@@ -1245,7 +1250,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-**Vector2i PrintMeasure(Rect2i rect, int alignFlags, FastString text)**
+
+**Vector2i RETRO:PrintMeasure(Rect2i rect, int alignFlags, FastString text)**
 ---
 
      Print text to display using custom font at the given position.
@@ -1335,7 +1341,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'fontIndex' - Font index*
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-**Vector2i PrintMeasure(int fontIndex, string text)**
+
+**Vector2i RETRO:PrintMeasure(int fontIndex, string text)**
 ---
 
      Measure a text string without printing it, using custom font.
@@ -1347,7 +1354,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-**Vector2i PrintMeasure(int fontIndex, Rect2i rect, int alignFlags, string text)**
+
+**Vector2i RETRO:PrintMeasure(int fontIndex, Rect2i rect, int alignFlags, string text)**
 ---
 
      Print text to display using custom font at the given position.
@@ -1436,7 +1444,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'fontIndex' - Font index*
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-**Vector2i PrintMeasure(int fontIndex, FastString text)*
+
+**RETRO:Vector2i PrintMeasure(int fontIndex, FastString text)*
 ---
 
      Measure a text string without printing it, using custom font.
@@ -1448,7 +1457,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      "ALIGN_V_CENTER", "TEXT_OVERFLOW_CLIP", "TEXT_OVERFLOW_WRAP".
    - *arg: 'text' - Text*
    - *ret: Dimensions*
-**Vector2i PrintMeasure(int fontIndex, Rect2i rect, int alignFlags, FastString text)**
+
+**Vector2i RETRO:PrintMeasure(int fontIndex, Rect2i rect, int alignFlags, FastString text)**
 ---
 
      Setup a custom font from the sprite sheet.
@@ -1474,7 +1484,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'button' - A bitmask of one or multiple buttons.*
    - *arg: 'player' - Player to check, or "PLAYER_ANY" to check any player. Defaults to "PLAYER_ONE"*
    - *ret: True if button(s) held down*
-**bool ButtonDown(int button, int player = PLAYER_ONE)**
+
+**bool RETRO:ButtonDown(int button, int player = PLAYER_ONE)**
 ---
 
      Return true if any of the given button(s) went from an up to down state since last "IRetroBlitGame.Update" call.
@@ -1482,7 +1493,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'button' - A bitmask of one or multiple buttons.*
    - *arg: 'player' - Player to check, or "PLAYER_ANY" to check any player. Defaults to "PLAYER_ONE"*
    - *ret: True if button(s) pressed*
-**bool ButtonPressed(int button, int player = PLAYER_ONE)**
+
+**bool RETRO:ButtonPressed(int button, int player = PLAYER_ONE)**
 ---
 
      Return true if any of the given button(s) went from a down to up state since last "IRetroBlitGame.Update" call.
@@ -1490,28 +1502,32 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'button' - A bitmask of one or multiple buttons.*
    - *arg: 'player' - Player to check, or "PLAYER_ANY" to check any player. Defaults to "PLAYER_ONE"*
    - *ret: True if button(s) released*
-**bool ButtonReleased(int button, int player = PLAYER_ONE)**
+
+**bool RETRO:ButtonReleased(int button, int player = PLAYER_ONE)**
 ---
 
      Return true if given key is held down.
      
    - *arg: 'keyCode' - Key code*
    - *ret: True if key held down*
-**bool KeyDown(KeyCode keyCode)**
+
+**bool RETRO:KeyDown(KeyCode keyCode)**
 ---
 
      Return true if given key went from an up to down state since last "IRetroBlitGame.Update" call.
      
    - *arg: 'keyCode' - Key code*
    - *ret: True if key pressed*
-**bool KeyPressed(KeyCode keyCode)**
+
+**bool RETRO:KeyPressed(KeyCode keyCode)**
 ---
 
      Return true if given key went from a down to up state since last "IRetroBlitGame.Update" call.
      
    - *arg: 'keyCode' - Key code*
    - *ret: True if key released*
-**bool KeyReleased(KeyCode keyCode)**
+
+**bool RETRO:KeyReleased(KeyCode keyCode)**
 ---
 
      Returns of string of characters entered since last "IRetroBlitGame.Update" call. Normally this string
@@ -1519,7 +1535,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      spawn of a single game loop.
      
    - *ret: Character string*
-**string InputString()**
+
+**string RETRO:InputString()**
 ---
 
      Get the current pointer position. If there is a mouse detected then the position is the position of the mouse pointer in
@@ -1528,14 +1545,16 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      if the pointer position is valid.
      
    - *ret: Pointer position*
-**Vector2i PointerPos()**
+
+**Vector2i = RETRO:PointerPos()**
 ---
 
      Returns true if the pointer position is valid. A pointer position may be undefined if there is no mouse connected, and there are no
      current touches.
      
    - *ret: True if pointer position is valid*
-**bool PointerPosValid()**
+
+**bool = RETRO:PointerPosValid()**
 ---
 
      Get the delta of the mouse scroll position since last "IRetroBlitGame.Update" call. The delta is always 0 if there
@@ -1577,6 +1596,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'volume' - Volume to play at where 0 is silent, 1 is the original clip volume and values beyond 1 indicate amplification beyond the recorded volume. Defaults to 1*
    - *arg: 'pitch' - Pitch to play at, where 1 is the original sound pitch, values less than 1 indicate lower pitch, and values greater than 1 indicate higher pitch. Defaults to 1*
    - *ret: Sound reference*
+
 **SoundReference SoundPlay(int slotIndex, float volume = 1.0f, float pitch = 1.0f)**
 **SoundReference SoundPlay(string sfx_name, float volume = 1.0f, float pitch = 1.0f)**
 ---
@@ -1586,7 +1606,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      
    - *arg: 'soundReference' - Sound reference*
    - *ret: True if still playing, false otherwise.*
-**bool SoundIsPlaying(SoundReference soundReference)**
+
+**bool RETRO:SoundIsPlaying(SoundReference soundReference)**
 ---
 
      Set the volume of the currently playing sound by using its "SoundReference"
@@ -1609,6 +1630,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      
    - *arg: 'soundReference' - Sound reference*
    - *ret: Volume*
+
 **float = RETRO:SoundVolumeGet(SoundReference soundReference)**
 ---
 
@@ -1680,12 +1702,14 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      Get the current music volume.
      
    - *ret: Volume*
+
 **float = RETRO:MusicVolumeGet()**
 ---
 
      Get the current music pitch.
      
    - *ret: Pitch*
+
 **float = RETRO:MusicPitchGet()**
 ---
 
@@ -1786,7 +1810,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      
    - *arg: 'name' - Name of the property*
    - *ret: Unique ID*
-**int ShaderPropertyID(string name)**
+
+**int RETRO:ShaderPropertyID(string name)**
 ---
 
      Set a shader color property
