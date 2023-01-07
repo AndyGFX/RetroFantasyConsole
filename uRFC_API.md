@@ -216,8 +216,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
 
 * FastString(length)
 
-##    
-**RETRO:Color32**
+##**RETRO:Color32**
 
 - **Color32 = Color32(byte r, byte g, byte b, byte a)**
     - *create colot from rgba bytes*
@@ -233,8 +232,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
     
 
 
-##    
-**RETRO:Rect2i**
+##**RETRO:Rect2i**
 
 - **Rect2i Rect2i:Set(int x, int y, int width, int height)**
     - *Set x,y,w,h*
@@ -265,8 +263,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
     - *Returns a copy of the rectangle offset by given position. Does not change the original rectangle*
 
 
-##    
-**RETRO:Vector2i**
+##**RETRO:Vector2i**
 
 - **Vector2i Vector2i:Copy()**
     - *vector copy*
@@ -301,8 +298,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
 - **string Vector2i:ToString(string format)**
     - *convert to formated string*
 
-##    
-**RETRO:FastString**
+##**RETRO:FastString**
 - **string FastString:Append(int|float|Color32|Rect2i|Vector2i)**
     - *convert to fast string*
 - **string FastString:Clear()**
@@ -366,8 +362,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
 - **Color32 TWEEN:Interpolate(int _func, Color32 start, Color32 end, float t)**
     - *Interpolate a Color32 value from the "start" value to the "end" value by time "t" where at t = 0.0 the value is "start" and at t = 1.0 the value is "end"*
 
-##    
-**RETRO:**
+## **RETRO:**
 
 ---
 
@@ -385,7 +380,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      
    - *ret: Sprite size*
 
-**Vector2i SpriteSize()**
+**Vector2i = RETRO:SpriteSize()**
 ---
 
      Get Sprite size of the given sprite sheet.
@@ -393,14 +388,14 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'index' - Spritesheet index*
    - *ret: Sprite size*
 
-**Vector2i SpriteSize(int index)**
+**Vector2i = RETRO:SpriteSize(int index)**
 ---
 
      Get Sprite sheet size of the current sprite sheet.
      
    - *ret: Sprite sheet size*
 
-**Vector2i SpriteSheetSize()**
+**Vector2i = RETRO:SpriteSheetSize()**
 ---
 
      Get size of the given sprite sheet.
@@ -408,14 +403,14 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'index' - Spritesheet index*
    - *ret: Return sprite sheet size*
 
-**Vector2i SpriteSheetSize(int index)**
+**Vector2i = RETRO:SpriteSheetSize(int index)**
 ---
 
      Clear the current target.
      
    - *arg: 'color' - Color to clear with**
    
-**RETRO:Clear(Color32 color)*
+**RETRO:Clear(Color32 color)**
 ---
 
      Clear a region of the current target. Useful for clearing sprite sheet areas to alpha 0.
@@ -433,7 +428,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'row' - Row*
    - *ret: Sprite index*
 
-**int SpriteIndex(int column, int row)**
+**int = RETRO:SpriteIndex(int column, int row)**
 ---
 
      Helper function for calculating sprite index given sprite sheet column and row.
@@ -444,7 +439,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'row' - Row*
    - *ret: Sprite index*
 
-**int SpriteIndex(int spriteSheetIndex, int column, int row)**
+**int = RETRO:SpriteIndex(int spriteSheetIndex, int column, int row)**
 ---
 
      Helper function for calculating sprite index given sprite sheet column and row
@@ -454,7 +449,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'cell' - Cell in sprite sheet where "Vector2i.x" is the column and "Vector2i.y" is the row.*
    - *ret: Sprite index*
 
-**int SpriteIndex(int spriteSheetIndex, Vector2i cell)**
+**int = RETRO:SpriteIndex(int spriteSheetIndex, Vector2i cell)**
 ---
 
      Load a sprite sheet, sprite size will be set to default of 16 x 16.
@@ -763,7 +758,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'rect' - Rectangular area*
    - *arg: 'color' - Color*
    
-**RETRO:DrawRect(Rect2i rect, Color32 color)*
+**RETRO:DrawRect(Rect2i rect, Color32 color)**
 ---
 
      Draw a rectangle outline with a pivot point and rotation in degrees
@@ -867,7 +862,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      Get the current alpha transparency value
      
    - *ret: Transparency*
-**byte RETRO:AlphaGet()**
+
+**byte = RETRO:AlphaGet()**
 ---
 
      Set the tint color for drawing.
@@ -887,7 +883,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      
    - *arg: 'pos' - Position*
    
-**RETRO:CameraSet(Vector2i pos)*
+**RETRO:CameraSet(Vector2i pos)**
 ---
 
      Reset the camera position back to 0, 0. This is equivalent to "CameraSet"(0, 0).
@@ -900,7 +896,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      
    - *ret: Camera position*
 
-**Vector2i CameraGet()**
+**Vector2i = RETRO:CameraGet()**
 ---
 
      Set a rectangular clipping region. All drawing outside of this region will be clipped away. By default the clipping
@@ -920,7 +916,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      Get the current clipping region.
      
    - *ret: Clipping region*
-**Rect2i ClipGet()**
+
+**Rect2i = RETRO:ClipGet()**
 ---
 
      Enable clip region debugging by drawing rectangles around the clip regions with the given color index. Subsequent
@@ -1009,6 +1006,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'layer' - Tilemap layer*
    - *arg: 'tilePos' - Tile position*
    - *ret: Data*
+
 **metatable = RETRO:MapDataGet(int layer, Vector2i tilePos)**
 ---
 
@@ -1041,7 +1039,8 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
    - *arg: 'layer' - Chunk layer*
    - *arg: 'pos' - Offset of the chunk in tile coordinates*
    - *ret: True if empty, false otherwise*
-**bool MapChunkEmpty(int layer, Vector2i pos)**
+   
+**bool = RETRO:MapChunkEmpty(int layer, Vector2i pos)**
 ---
 
      Shift the tilemap chunks by the given amount chunks in the X and Y direction. This method is particularly useful
