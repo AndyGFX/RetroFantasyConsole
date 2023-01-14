@@ -1,4 +1,17 @@
-# RETRO FANTASY CONSOLE
+# RETRO FANTASY CONSOLE ver 1.0.1
+
+**RELEASE 1.0.1** (comming soon)
+- *added new console comamnd 'play' - load cartridge and extract to folder end run*
+- *added object GIF for capture 'retro' screen to anima ted gif image*
+- *added RFC.cfg - when exist, then use RFC.exe for run game*
+     - gamefolder:[cartridgename]
+     - screen_w:[screen width]
+     - screen_h:[screen height]
+     - fullscreen:[true/false]
+
+
+**RELEASE 1.0.0**
+
 
 ##**FEATURES**
 
@@ -53,6 +66,7 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
 |create|Create new game folder|create [game folder name]|
 |compress|Compress game folder to card.|compress [game folder name]|
 |unpack|Extract game cartridge to folder|unpack [game.cartridge]|
+|play|Extract game cartridge to folder end run game|play [cartridge] *(Note: without extension)*|
 
 
 ##**Const**
@@ -229,8 +243,6 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
 - **string = Color32:ToString(string format)**
     - *convert to formated string*
 
-    
-
 
 ##**RETRO:Rect2i**
 
@@ -307,6 +319,20 @@ uRFC.exe -game Game_001 -resolution 1280 800 false
      - *convert to lower chars*
 - **string FastString:ToUpper()**
      - *convert to upper chars*
+
+## **GIF:**
+     - save captured screen as animated gif
+
+- **GIF:Setup(string filename, int framerate, int downscale, int time, bool bilinear)**
+     - *filename = postfix for gif, result is Foldedname_filename.gif*
+     - *framerate = 30 or 60*
+     - *downscale = ouput captured screen (screen size/downscale = ouput size)*
+     - *time = record time (!!! convert captured screens to gif take some time)*
+     - *bilinear = true/false*
+- **GIF:Record()**     
+     - start recording in defined length
+     - record is stoped when defined time is reached
+     - and saved to game folder
 
 ## **DATA:**
     - object for store data to JSON file format.
