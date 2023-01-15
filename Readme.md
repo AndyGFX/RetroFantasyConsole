@@ -1,6 +1,6 @@
 # RETRO FANTASY CONSOLE ver 1.0.1
 
-**RELEASE 1.0.1** (comming soon)
+**RELEASE 1.0.1**
 - *added new console comamnd 'play' - load cartridge and extract to folder and run game*
 - *added object GIF for capture 'retro' screen to anima ted gif image*
 - *added RFC.cfg - when exist, then use RFC.exe for run game*
