@@ -1,7 +1,12 @@
+
+Is the game engine to create retro games with lua.    Engine works like "player" where is possible run game from console or via bat/lnk file with defined arguments.   You can create games with user-defined hardware properties, such as screen size, maximum map size, map layers, pixel style, etc. defined within the beginning in the main.lua  script and   RFC.exe  run game stored in folders or in compressed cartridge. Engine doesn't contain editing tools for assets. For create sprites, music, tiles, ... you need use 3rd party tools. All build-in lua commands are documented in markdown  format here: 
+
+Download: https://andygfx.itch.io/uretrofantasyconsole
+
 # RETRO FANTASY CONSOLE ver 1.0.1
 
-**RELEASE 1.0.1** (comming soon)
-- *added new console comamnd 'play' - load cartridge and extract to folder end run*
+**RELEASE 1.0.1**
+- *added new console comamnd 'play' - load cartridge and extract to folder and run game*
 - *added object GIF for capture 'retro' screen to anima ted gif image*
 - *added RFC.cfg - when exist, then use RFC.exe for run game*
      - gamefolder:[cartridgename]
@@ -43,12 +48,74 @@
 - Mouse input
 - Shaders (unfinished)
 
-##**Execute game**
+**Execute game:**
 
 uRFC.exe -game <folder name> -resolution <app width(int)> <app height(int)> <fullscreen(bool)>
 
 ```
 uRFC.exe -game Game_001 -resolution 1280 800 false
+```
+
+**Create your own game:**
+
+- Create folder inside [RFC_Games]
+- create inside main.lua script with  callback functions:
+     - OnHardwareSetup()
+     - OnInitialize()
+     - OnUpdate(deltaTime)
+     - OnPreRender()
+     - OnRender()
+     - OnClose()
+- or copy main.lua source from [_Template_]  folder  to new one created
+
+
+```
+-- minimal main.lua example:
+
+local SCREEN_CLEAR_COLOR = RETRO:Color32(50, 104, 108)
+
+function OnHardwareSetup()
+
+	print("HW setup ...")
+
+	HW_size_x = 264
+	HW_size_y = 248
+	HW_map_size_x = 256
+	HW_map_size_y = 256
+	HW_map_layers = 8
+	HW_fps = 60
+	HW_pixel_style = PixelStyle.Square
+
+end
+
+-- Is called only once, when main.lua is excuted
+function OnInitialize()
+	print("Template main.lua initialized ...")	
+end
+
+-- Is called every frame
+function OnUpdate(deltaTime)
+	
+end
+
+-- Is called every frame
+function OnPreRender() 
+	
+end
+
+-- Is called every frame
+function OnRender()
+
+        RETRO:Clear(SCREEN_CLEAR_COLOR);
+
+end
+
+-- Is called when game is closed
+function OnClose()
+	print("OnClose  ... ");
+end
+
+
 ```
 
 ##**Build-in console commands**
